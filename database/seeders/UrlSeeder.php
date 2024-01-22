@@ -14,15 +14,14 @@ class UrlSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i=0; $i<100; $i++) {
-            $urlKey = Str::random(5);
+        $urlKey = Str::random(5);
 
-            if (! Url::where('url_key', $urlKey)->exists()) {
-                \App\Models\Url::factory()->create([
-                    'url_key' => $urlKey,
-                    'short_url' => config('app.url').'/'.$urlKey
-                ]);
-            }
+        if (! Url::where('url_key', $urlKey)->exists()) {
+            \App\Models\Url::factory()->create([
+                'original_url' => 'https://www.uol.com.br/esporte/colunas/alicia-klein/2024/01/22/tem-torcedor-que-passara-raiva-o-ano-todo-ja-da-para-saber-quem-sera.htm',
+                'url_key' => $urlKey,
+                'short_url' => config('app.url').'/api/'.$urlKey
+            ]);
         }
     }
 }

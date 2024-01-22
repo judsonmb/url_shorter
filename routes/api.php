@@ -23,4 +23,6 @@ Route::get('/shorturls', [UrlController::class, 'index']);
 
 Route::post('/shorturls', [UrlController::class, 'store']);
 
-Route::get('/redirect/{urlKey}', [UrlController::class, 'redirect']);
+Route::post('/{urlKey}', [UrlController::class, 'getShortUrlByUrlKey']);
+
+Route::get('/{urlKey}', [UrlController::class, 'redirectUsingShortUrlByUrlKey']);

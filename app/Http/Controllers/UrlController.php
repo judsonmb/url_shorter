@@ -29,10 +29,17 @@ class UrlController extends Controller
         return response()->json($url, 201);
     }
 
-    public function redirect(request $request, string $urlKey)
+    public function getShortUrlByUrlKey(request $request, string $urlKey)
     {
         $url = $this->service->getUrlByUrlKey($urlKey);
 
-        return redirect($url);
+        return response()->json($url, 200);
+    }
+
+    public function redirectUsingShortUrlByUrlKey(request $request, string $urlKey)
+    {
+        $url = $this->service->getUrlByUrlKey($urlKey);
+
+        return \Redirect::to($url);
     }
 }

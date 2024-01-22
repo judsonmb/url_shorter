@@ -21,10 +21,10 @@ class UrlFactory extends Factory
         $urlKey = fake()->word();
 
         return [
-            'user_id' => User::inRandomOrder()->first()->id,
+            'user_id' => User::first()->id,
             'original_url' => fake()->url,
             'url_key' => $urlKey,
-            'short_url' => config('app.url').'/'.$urlKey,
+            'short_url' => config('app.url').'/api/'.$urlKey,
         ];
     }
 }

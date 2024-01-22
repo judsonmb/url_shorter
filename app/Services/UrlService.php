@@ -16,14 +16,14 @@ class UrlService {
 
     public function getUserUrls(int $userId): Collection
     {
-        return $this->model->where('user_id', $userId)->get();
+        return $this->model->where('user_id', $userId)->orderByDesc('id')->get();
     }
 
     public function createUrl(array $data): Url
     {
         $urlKey = Str::random(5);
         $data['url_key'] = $urlKey;
-        $data['short_url'] = config('app.url').'/'.$urlKey;
+        $data['short_url'] = config('app.url').'/api/'.$urlKey;
 
         return $this->model->create($data);
     }
