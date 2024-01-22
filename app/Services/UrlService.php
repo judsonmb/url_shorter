@@ -23,7 +23,7 @@ class UrlService {
     {
         $urlKey = Str::random(5);
         $data['url_key'] = $urlKey;
-        $data['short_url'] = config('app.url').'/api/'.$urlKey;
+        $data['short_url'] = $_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/api/'.$urlKey;
 
         return $this->model->create($data);
     }

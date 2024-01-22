@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('original_url');
             $table->string('url_key')->unique();
             $table->string('short_url');
+            $table->integer('clicks')->default(0);
             $table->timestamps();
         });
     }
