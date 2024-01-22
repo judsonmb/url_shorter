@@ -51,7 +51,7 @@ defineProps({
 
             <div class="flex justify-center mt-16 px-6 sm:items-center sm:justify-between">
                <div class="ms-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-end sm:ms-0">
-                    Bem vindo(a) ao Encurtador de URLs!
+                    Welcome to URL shorter!
                 </div>
             </div>
 

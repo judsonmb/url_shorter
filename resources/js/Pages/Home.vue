@@ -4,7 +4,7 @@ import { Head, Link } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <Head title="Encurtador" />
+    <Head title="URL Shorter" />
 
     <AuthenticatedLayout>
         <template #header>
