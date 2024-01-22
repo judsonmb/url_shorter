@@ -4,9 +4,9 @@
 
 ### Requerimentos
 
-composer
-php 8.2
-npm
+- composer
+- php 8.2
+- npm
 
 ### Comandos
 
